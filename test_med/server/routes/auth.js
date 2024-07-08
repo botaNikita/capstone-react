@@ -37,14 +37,17 @@ passport.deserializeUser(function (id, cb) {
 });
 
 // Route 1: Registering A New User: POST: http://localhost:8181/api/auth/register. No Login Required
-router.post('/register',[
+router.post('/register',
     body('email', "Please Enter a Vaild Email").isEmail(),
     body('name', "Username should be at least 4 characters.").isLength({ min: 4 }),
     body('password', "Password Should Be At Least 8 Characters.").isLength({ min: 8 }),
     body('phone', "Phone Number Should Be 10 Digits.").isLength({ min: 10 }),
-], async (req, res) => {
+ async (req, res) => {
 
     const error = validationResult(req);
+
+    console.log("request:" + req.body.email + " " + req.body.name + " " + req.body.phone + " " + req.body.password);
+
     if(!error.isEmpty()){
         return res.status(400).json({error: error.array()});
     }
