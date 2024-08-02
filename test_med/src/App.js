@@ -18,19 +18,16 @@ function App() {
   // Render the main App component
   return (
     <div className="App">
-        {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
-          {/* Display the Navbar component */}
-          <Notification />
-
-          {/* Set up the Routes for different pages */}
-          <Routes>
-            <Route path="/" element={<LandingPage/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/signup" element={<Sign_Up/>}/>
-            <Route path="/instant-consultation" element={<InstantConsultation />} />
-            <Route path="/appointments" element={<Appointments />} />
-          </Routes>
+          <Notification>
+            <Routes>
+              <Route path="/" element={<LandingPage/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/signup" element={<Sign_Up/>}/>
+              <Route path="/instant-consultation" element={<InstantConsultation />} />
+              <Route path="/appointments" element={<Appointments />} />
+            </Routes>
+          </Notification>
         </BrowserRouter>
     </div>
   );

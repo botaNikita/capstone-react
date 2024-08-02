@@ -1,6 +1,5 @@
 .appointment-card {
     width: 300px;
-    height: 100%;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -10,6 +9,7 @@
     position: fixed;
     background-color: white;
     height: fit-content;
+    top: 10px;
   }
 
 .appointment-card__title {
