@@ -5,17 +5,24 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [dateOfAppointment, setDateOfAppointment] = useState('');
     const [timeSlot, setTimeSlot] = useState('');
-    const [selectedSlot, setSelectedSlot] = useState(null);
-  
-    const handleSlotSelection = (slot) => {
-      setSelectedSlot(slot);
-    };
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber });
+      onSubmit({ name, phoneNumber, dateOfAppointment, timeSlot });
+      
       setName('');
       setPhoneNumber('');
+      setDateOfAppointment('');
+      setTimeSlot('');
+
+      window.localStorage.setItem("doctorName", doctorName);      
+      window.localStorage.setItem("doctorSpeciality", doctorSpeciality);      
+      window.localStorage.setItem("patienrName", name);
+      window.localStorage.setItem("patientPhone", phoneNumber);
+      window.localStorage.setItem("appointmentDate", dateOfAppointment);
+      window.localStorage.setItem("appointmentTime", timeSlot);
+
+      window.dispatchEvent(new Event("storage"));
     };
   
     return (

@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Import custom Navbar component
-import Navbar from './Components/Navbar/Navbar';
+import Notification from './Components/Notification/Notification';
 import LandingPage from './Components/LandingPage/LandingPage';
 import Login from './Components/Login/Login';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
@@ -21,7 +21,7 @@ function App() {
         {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
           {/* Display the Navbar component */}
-          <Navbar/>
+          <Notification />
 
           {/* Set up the Routes for different pages */}
           <Routes>
