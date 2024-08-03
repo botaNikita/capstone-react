@@ -11,6 +11,7 @@ import Login from './Components/Login/Login';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 import Appointments from './Components/Appointments/Appointments';
+import Reviews from './Components/Reviews/Reviews';
 
 // Function component for the main App
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/signup" element={<Sign_Up/>}/>
               <Route path="/instant-consultation" element={<InstantConsultation />} />
               <Route path="/appointments" element={<Appointments />} />
+              <Route path="/reviews" element={<Reviews />} />
             </Routes>
           </Notification>
         </BrowserRouter>

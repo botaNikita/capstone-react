@@ -1,0 +1,13 @@
+.reviews-container {
+    margin-top: 150px;
+}
+
+.reviews-container table {
+    border-spacing: 0;
+}
+
+.reviews-container td {
+    border: solid 1px gray;
+    padding: 5px;
+    text-align: center;
+}
