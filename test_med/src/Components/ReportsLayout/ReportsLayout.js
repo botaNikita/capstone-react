@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import './Reviews.css';
-import GiveReviews from '../GiveReviews/GiveReviews';
+import './ReportsLayout.css';
 
-const Reviews = () => {
+const ReportsLayout = () => {
     const [doctors, setDoctors] = useState([]);
     
       // useEffect hook to perform side effects in the component
     useEffect(() => {
         getDoctorsDetails();
     }, []);
-
+    
     const getDoctorsDetails = () => {
         fetch('https://api.npoint.io/9a5543d36f1460da2f63')
         .then(res => res.json())
@@ -26,14 +25,24 @@ const Reviews = () => {
                             <th>Serial number</th>
                             <th>Doctor name</th>
                             <th>Doctor speciality</th>
-                            <th>Provide feedback</th>
-                            <th>Review given</th>
+                            <th>View report</th>
+                            <th>Download report</th>
                         </tr>
                     </thead>
                     <tbody>
                         {doctors.map((doctor, index) => {
                             return (
-                                <GiveReviews doctor={doctor} index={index} key={index}></GiveReviews>                            
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{doctor.name}</td>
+                                    <td>{doctor.speciality}</td>
+                                    <td>
+                                        <button>View report</button>         
+                                    </td>
+                                    <td>
+                                        <button>Download report</button>
+                                    </td>
+                                </tr>
                             )
                         })}
                     </tbody>
@@ -43,4 +52,4 @@ const Reviews = () => {
     )
 }
 
-export default Reviews
+export default ReportsLayout

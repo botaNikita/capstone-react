@@ -88,6 +88,9 @@ const Navbar = () => {
                   <li className="menu-item">
                     <Link to="/profile">Your profile</Link>
                   </li>
+                  <li className="menu-item">
+                    <Link to="/reports">Your reports</Link>
+                  </li>
                 </ul>
               )}
             </div>            

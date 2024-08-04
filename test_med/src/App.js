@@ -12,6 +12,8 @@ import Sign_Up from './Components/Sign_Up/Sign_Up';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';
 import Appointments from './Components/Appointments/Appointments';
 import Reviews from './Components/Reviews/Reviews';
+import ProfileCard from './Components/ProfileCard/ProfileCard';
+import ReportLayout from './Components/ReportsLayout/ReportsLayout';
 
 // Function component for the main App
 function App() {
@@ -28,6 +30,8 @@ function App() {
               <Route path="/instant-consultation" element={<InstantConsultation />} />
               <Route path="/appointments" element={<Appointments />} />
               <Route path="/reviews" element={<Reviews />} />
+              <Route path="/profile" element={<ProfileCard />} />
+              <Route path="/reports" element={<ReportLayout />} />
             </Routes>
           </Notification>
         </BrowserRouter>
