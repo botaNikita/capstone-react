@@ -1,13 +1,19 @@
-.reviews-container {
+.reports-container {
     margin-top: 150px;
 }
 
-.reviews-container table {
+.reports-container table {
     border-spacing: 0;
 }
 
-.reviews-container td {
+.reports-container td {
+    border: solid 1px gray;
+    padding: 10px;
+    text-align: center;
+}
+
+.reports-container a {
     border: solid 1px gray;
     padding: 5px;
-    text-align: center;
+    background-color: aquamarine;
 }

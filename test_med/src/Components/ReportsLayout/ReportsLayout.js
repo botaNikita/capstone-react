@@ -18,7 +18,7 @@ const ReportsLayout = () => {
     }
     
     return (
-        <center className="reviews-container">
+        <center className="reports-container">
             <div>
                 <table>
                     <thead>
