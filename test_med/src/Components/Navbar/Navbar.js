@@ -14,11 +14,17 @@ const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const handleClick = () => setClick(!click);
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const extractedName = useMemo(() => {
       return username ? username.split('@')[0] : "";
     }, [username]);
 
-    
+    const toggleMenu = () => {
+      var newMenuOpen = !menuOpen;
+      setMenuOpen(newMenuOpen);
+    }
+
     const handleLogout = () => {
         sessionStorage.removeItem("auth-token");
         sessionStorage.removeItem("name");
@@ -75,15 +81,21 @@ const Navbar = () => {
         </li>
         {isLoggedIn?(
           <>
-            <div>
+            <div onClick={toggleMenu}>
               Welcome, {extractedName}
-            </div>
+              {menuOpen && (
+                <ul className="menu">
+                  <li className="menu-item">
+                    <Link to="/profile">Your profile</Link>
+                  </li>
+                </ul>
+              )}
+            </div>            
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
                 Logout
               </button>
-            </li>
-            
+            </li>            
           </>
         ) : (
           <>
