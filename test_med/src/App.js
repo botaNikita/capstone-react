@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 
 // Import components for routing from react-router-dom library
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Import custom Navbar component
 import Notification from './Components/Notification/Notification';
@@ -20,21 +20,21 @@ function App() {
 
   // Render the main App component
   return (
-    <div className="App">
-        <BrowserRouter>
-          <Notification>
-            <Routes>
-              <Route path="/" element={<LandingPage/>}/>
-              <Route path="/login" element={<Login/>}/>
-              <Route path="/signup" element={<Sign_Up/>}/>
-              <Route path="/instant-consultation" element={<InstantConsultation />} />
-              <Route path="/appointments" element={<Appointments />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/profile" element={<ProfileCard />} />
-              <Route path="/reports" element={<ReportLayout />} />
-            </Routes>
-          </Notification>
-        </BrowserRouter>
+    <div className="App">        
+        <Notification>
+          <Routes>
+            <Route exact path="/" element={<LandingPage/>}/>
+            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/signup" element={<Sign_Up/>}/>
+            <Route exact path="/instant-consultation" element={<InstantConsultation />} />
+            <Route exact path="/appointments" element={<Appointments />} />
+            <Route exact path="/reviews" element={<Reviews />} />
+            <Route exact path="/profile" element={<ProfileCard />} />
+            <Route exact path="/reports" element={<ReportLayout />} />      
+
+            <Route onEnter={() => window.location.reload()} />
+          </Routes>
+        </Notification>
     </div>
   );
 }

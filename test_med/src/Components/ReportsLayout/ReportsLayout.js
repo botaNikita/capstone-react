@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ReportsLayout.css';
+import { Link } from "react-router-dom";
 
 const ReportsLayout = () => {
     const [doctors, setDoctors] = useState([]);
@@ -37,10 +38,10 @@ const ReportsLayout = () => {
                                     <td>{doctor.name}</td>
                                     <td>{doctor.speciality}</td>
                                     <td>
-                                        <button>View report</button>         
+                                        <Link to="/patient_report.pdf" >View report</Link>
                                     </td>
-                                    <td>
-                                        <button>Download report</button>
+                                    <td>                                        
+                                        <Link to="/patient_report.pdf"  download>Download report</Link>
                                     </td>
                                 </tr>
                             )
