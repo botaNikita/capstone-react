@@ -25,7 +25,9 @@
     "build-windows": "react-scripts build && del /f /s /q \"server/build\" 1>nul && rmdir /s /q \"server/build\" && move build server",
     "build-ubuntu": "react-scripts build && rm -rdf server/build && mv build server/",
     "test": "react-scripts test",
-    "eject": "react-scripts eject" 
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js,.jsx ."
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +48,12 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.1",
     "babel-install": "2.1.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.3.0",
     "webpack": "^5.93.0"
   }
 }

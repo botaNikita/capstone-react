@@ -14,7 +14,7 @@ const Setauthtoken = () => {
             sessionStorage.setItem('auth-token', params.authtoken);
             navigate('/');
         }
-        // eslint-disable-next-line
+         
     }, [])
 
   return (
