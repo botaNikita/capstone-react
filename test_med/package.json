@@ -22,9 +22,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && del /f /s /q \"server/build\" 1>nul && rmdir /s /q \"server/build\" && move build server",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject" 
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-install": "2.1.0",
+    "webpack": "^5.93.0"
   }
 }
