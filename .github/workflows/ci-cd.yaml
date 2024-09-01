@@ -28,14 +28,10 @@ jobs:
       with:
         node-version: '14'
 
-    # Go to the application folder
-    - name: Go to the app
-      run: cd test_med
-
     # Install the dependencies for the application
     - name: Install dependencies
-      run: npm install
+      run: cd test_med && npm install
 
     # Build the application
     - name: Build
-      run: npm run build
+      run: cd test_med && npm run build
