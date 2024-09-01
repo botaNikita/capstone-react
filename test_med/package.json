@@ -22,7 +22,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && del /f /s /q \"server/build\" 1>nul && rmdir /s /q \"server/build\" && move build server",
+    "build-windows": "react-scripts build && del /f /s /q \"server/build\" 1>nul && rmdir /s /q \"server/build\" && move build server",
+    "build-ubuntu": "react-scripts build && rm -rdf server/build && mv build server/",
     "test": "react-scripts test",
     "eject": "react-scripts eject" 
   },

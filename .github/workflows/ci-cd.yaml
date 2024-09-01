@@ -34,4 +34,4 @@ jobs:
 
     # Build the application
     - name: Build
-      run: cd test_med && npm run build
+      run: cd test_med && npm run build-ubuntu
